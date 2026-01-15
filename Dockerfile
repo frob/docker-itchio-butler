@@ -1,13 +1,13 @@
 FROM debian:stable-slim AS base
 
-ARG VERSION=15.21.0
+ARG VERSION=15.24.0
 
 FROM base AS download
 
 RUN apt-get update && apt-get install unzip wget -y
 
 # Install Butler
-RUN wget -O butler-cli.zip https://broth.itch.ovh/butler/linux-amd64/${VERSION}/archive
+RUN wget -O butler-cli.zip https://broth.itch.zone/butler/linux-amd64/${VERSION}/archive/default
 
 RUN mkdir /butler
 RUN unzip butler-cli.zip -d /butler
